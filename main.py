@@ -1,11 +1,13 @@
 import random
 import string
 
+#create password
 def create_password(length=12):
     all_chars = string.ascii_letters + string.digits + "!@#$%^&*()-_=+"
     password = ''.join(random.choice(all_chars) for _ in range(length))
     return password
 
+#check strength
 def check_strength(password):
     has_lower = any(c.islower() for c in password)
     has_upper = any(c.isupper() for c in password)
